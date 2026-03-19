@@ -1,0 +1,3 @@
+"""
+Jobs do projeto CoinGecko.
+"""
