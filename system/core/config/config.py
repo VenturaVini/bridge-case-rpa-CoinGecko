@@ -19,10 +19,7 @@ def carregar_config() -> dict:
         # Configurações de processo
         "max_retries": int(os.getenv("MAX_RETRIES", "3")),  # numero maximo de tentativas
         "retry_delay_base": int(os.getenv("RETRY_DELAY_BASE", "2")), # delay para tenta novamente a requi
-        
-        # Queue (Coloquei em formato json estruturado)
-        "queue_name": os.getenv("QUEUE_NAME", "coingecko_queue"),
-        
+
         # Diretorios de saída
         "data_dir": os.getenv("DATA_DIR", "./system/data"),
         "log_level": os.getenv("LOG_LEVEL", "INFO"),
