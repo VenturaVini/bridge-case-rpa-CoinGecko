@@ -64,7 +64,7 @@ def carregar_config() -> dict:
     
     config = {
         # API CoinGecko
-        "coingecko_url": os.getenv("COINGECKO_URL", "https://api.coingecko.com/api/v3"),
+        "coingecko_url": os.getenv("COINGECKO_URL"),
         "coingecko_timeout": int(os.getenv("COINGECKO_TIMEOUT", "10")),  # tempo de retono
         
         # Configurações de processo
@@ -76,7 +76,10 @@ def carregar_config() -> dict:
         "log_level": os.getenv("LOG_LEVEL", "INFO"),
 
         # Tipo de moeda retorno
-        "moeda": os.getenv("MOEDA", "usd")
+        "moeda": os.getenv("MOEDA", "usd"),
+
+        # Quantidade de criptomoedas
+        "quantidade_criptos": int(os.getenv("QUANTIDADE_CRIPTOS", "5"))
     }
-    
+
     return config

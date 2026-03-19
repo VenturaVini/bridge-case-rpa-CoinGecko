@@ -14,7 +14,7 @@ def main() -> bool:
     service = CoinGeckoAPI(config, moeda=config.get('moeda', 'usd'))
 
 
-    cryptos = service.buscar_lista_criptos(20)
+    cryptos = service.buscar_lista_criptos(config.get('quantidade_criptos', 5))
 
     # define status da execução (uipath)
     if cryptos:
