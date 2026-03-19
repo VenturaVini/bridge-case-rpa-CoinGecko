@@ -59,12 +59,20 @@ def carregar_config() -> dict:
 
     Returns:
         dicionário com todas as configurações do projeto
+
+    Raises:
+        ValueError: se variáveis obrigatórias estiverem faltando
     '''
     load_dotenv(override=True) # pegar da .env msm
-    
+
+    # Validar variáveis obrigatórias
+    coingecko_url = os.getenv("COINGECKO_URL")
+    if not coingecko_url:
+        raise ValueError("Variável de ambiente COINGECKO_URL é obrigatória")
+
     config = {
         # API CoinGecko
-        "coingecko_url": os.getenv("COINGECKO_URL"),
+        "coingecko_url": coingecko_url,
         "coingecko_timeout": int(os.getenv("COINGECKO_TIMEOUT", "10")),  # tempo de retono
         
         # Configurações de processo
