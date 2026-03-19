@@ -39,8 +39,14 @@ wheels/
 .DS_Store
 
 # Dados de saída e logs
-system/data/
-system/data/logs/
+# Permite .gitkeep mas ignora conteúdo
+!system/data/
+!system/data/logs/
+!system/data/logs/.gitkeep
+system/data/*
+!system/data/logs
+system/data/logs/*
+!system/data/logs/.gitkeep
 *.csv
 *.json
 *.xlsx
