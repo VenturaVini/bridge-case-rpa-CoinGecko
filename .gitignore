@@ -38,14 +38,13 @@ wheels/
 *~
 .DS_Store
 
-# Dados de saída
+# Dados de saída e logs
 system/data/
+system/data/logs/
 *.csv
 *.json
 *.xlsx
-
-# Logs
 *.log
 
 # Lock files (optional — descomente se quiser controlar)
-# uv.lock
+uv.lock
